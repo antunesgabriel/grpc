@@ -1,0 +1,21 @@
+syntax = "proto3";
+package pb;
+option go_package = "../gen";
+
+
+message UserCreateDTO {
+    string name = 1;
+    string email = 2;
+    int32  age = 3;
+}
+
+message User {
+    string id = 1;
+    string name = 2;
+    string email = 3;
+    int32  age = 4; 
+}
+
+service UserService {
+    rpc AddUser (UserCreateDTO) returns (User);
+}
